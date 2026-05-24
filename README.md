@@ -109,9 +109,7 @@ HA already found the device and I was able to "add it" in the settings got ESPHo
 
 ## 2026-03-19 TODO
 
-* NTP
 * MQTT
-* Secrets for sensitive information such as passwords, encryption keys, etc.
 
 ## 2026-03-19 Results
 
