@@ -34,33 +34,13 @@ i2c:
 sensor:
   - platform: bme280_i2c
     temperature:
-      name: "BME280 Temperature"
-      internal: true  # <--- Stops automatic MQTT publishing
+      name: "lab Temperature"
     pressure:
-      name: "BME280 Pressure"
-      internal: true  # <--- Stops automatic MQTT publishing
+      name: "lab Pressure"
     humidity:
-      name: "BME280 Humidity"
-      internal: true  # <--- Stops automatic MQTT publishing
+      name: "lab Humidity"
     address: 0x76
     update_interval: 60s
 
-time:
-  - platform: sntp
-    id: sntp_time
-    timezone: America/Chicago
-    servers:
-     - 0.pool.ntp.org
-     - 1.pool.ntp.org
-     - 2.pool.ntp.org
-
-# Example configuration entry
-mqtt:
-  broker: !secret mqtt_broker
-  log_topic:
-    topic: debug
-    level: ERROR
-  discovery: false 
-  
 captive_portal:
     

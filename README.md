@@ -6,19 +6,24 @@ First ESPHome project
 
 I have an ESP8266 that connects to a BME280 sensor to measure and publish temperature, humidity and pressure via MQTT. One previous project <https://github.com/HankB/ESP8266_RTOS_BME280> no longer builds. Another using PlatformIO and based on the Arduino SDK <https://github.com/HankB/esp8266_MQTT_BME280> builds but has weird problems. Depending on the amount of serial I/O the project does, it either doesn;t run at all, runs but produces wildly wrong readings or produces reasonable readings for a bit before reverting to the wild readings. IAC, I've been meaning to take a look at ESPHome and that seems particularly suitable because I'll be integrating the readings with HomeAssistant.
 
+## 2026-05-25 Status
+
+I have given up on making ESPHome work the way I want and have just configured it as it is designed to be used. No more battles! It works and puts readings up on my HASS dashboard. I'm not capturing readings for long term storage and that's a topic for another day.
+
 ## 2026-03-18 Plan
 
-Explore, get something working. Add MQTT publishing and then test, test and test.
+Explore, get something working. <s>Add MQTT publishing</s> and then test, test and test.
 
 ## 2026-03-18 Toolchain
 
-Install per instructions at <https://esphome.io/guides/installing_esphome/>. The `venv` is in `/esp/venv`. Editing using VS Code (but not the Espressif or PlatformIO Extensions.) This host is running Deboan Linux (Trixie.)
+Install per instructions at <https://esphome.io/guides/installing_esphome/>. The `venv` is in `~/esp/venv`. Editing using VS Code (but not the Espressif or PlatformIO Extensions.) This host is running Deboan Linux (Trixie.)
 
 ## 2026-03-18 Usage and build
 
 * Project home is `~/home/hbarta~/Programming/ESP8266/ESP8266-BME280-ESPHome`.
 
 ```text
+. ~/esp/venv/bin/activate
 esphome wizard ESP8266-BME280-ESPHome.yaml # and answer the connections
 esphome run ESP8266-BME280-ESPHome.yaml # Connect ESP, verify `/dev/ttyUSB0` and proceed
 ```
@@ -109,12 +114,10 @@ HA already found the device and I was able to "add it" in the settings got ESPHo
 
 ## 2026-03-19 TODO
 
-* MQTT
+* <s>MQTT</s>
 
 ## 2026-03-19 Results
 
-It is working and was pretty straight forward to configure and install. I will definitely consider using it for future HASS sensors if the MQTT publishing can be as easily conigured. I also want NTP support.
+It is working and was pretty straight forward to configure and install. I will definitely consider using it for future HASS sensors <s>if the MQTT publishing can be as easily configured. I also want NTP support.</s>
 
 ## Errata
-
-* 2026-03-19 Cannot publish the entire configuration file at this time because it includes sensitive information.
