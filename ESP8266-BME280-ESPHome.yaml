@@ -1,5 +1,5 @@
 esphome:
-  name: esp8266-538340
+  name: esp8266-538b6e
 
 esp8266:
   board: d1_mini
@@ -34,11 +34,11 @@ i2c:
 sensor:
   - platform: bme280_i2c
     temperature:
-      name: "lab Temperature"
+      name: "blue bedroom Temperature"
     pressure:
-      name: "lab Pressure"
+      name: "blue bedroom Pressure"
     humidity:
-      name: "lab Humidity"
+      name: "blue bedroom Humidity"
     address: 0x76
     update_interval: 60s
 
